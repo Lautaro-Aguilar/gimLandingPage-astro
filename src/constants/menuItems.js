@@ -1,2 +1,2 @@
-const menuItems = ['Advantages', 'Membership', 'About', 'Trainers'];
+const menuItems = ['Advantages', 'Membership', 'About'];
 export default menuItems;

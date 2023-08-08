@@ -1,5 +1,3 @@
-import { BsCheckCircle } from 'react-icons/bs';
-
 const Card = ({ title, price, advantages }) => {
   return (
     <article className='w-full max-w-[275px] max-h-[410px] min-w-[275px] overflow-hidden rounded-lg flex flex-col gap-px my-5'>
@@ -11,7 +9,10 @@ const Card = ({ title, price, advantages }) => {
         <ul className='space-y-5 px-4 py-8 text-left min-h-[250px]'>
           {advantages?.map((advantage, index) => (
             <li className='flex gap-3 items-center' key={index}>
-              <BsCheckCircle color='white' className='flex-shrink-0 w-5 h-5' />
+              <i
+                class='fa-regular fa-circle-check'
+                style={{ color: ' white' }}
+              ></i>
               <span className='text-sm font-light leading-tight text-white'>
                 {advantage}
               </span>

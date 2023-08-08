@@ -71,7 +71,7 @@ const Slider = () => {
   }, []);
 
   return (
-    <section className='flex flex-col'>
+    <section className='flex flex-col mb-40' id='Membership'>
       <h2 className='text-3xl text-white text-center pt-4 font-medium'>
         Gym membership
       </h2>

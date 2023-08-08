@@ -1,33 +1,42 @@
-import React from 'react';
-import { FaDumbbell, FaRulerCombined } from 'react-icons/fa';
-import { GiJumpingRope } from 'react-icons/Gi';
-import { IoMdClock } from 'react-icons/Io';
-
 const ReasonsList = () => {
   const reasons = [
     {
       title: '15000 sq.m.',
       description:
         'A spacious gym for sports – a safe distance between exercise machines',
-      icon: <FaRulerCombined size={40} color='yellow' />,
+      icon: (
+        <i
+          class='fa-solid fa-ruler-combined fa-xl'
+          style={{ color: 'yellow' }}
+        ></i>
+      ),
     },
     {
       title: 'More than 200 equipment',
       description:
         'No queues at the simulators. Premium equipment from LifeStyle, Hammer Strength, TechnoGym.',
-      icon: <FaDumbbell size={40} color='yellow' />,
+      icon: (
+        <i class='fa-solid fa-dumbbell fa-xl' style={{ color: 'yellow' }}></i>
+      ),
     },
     {
       title: '4 fitness zones',
       description:
         'From cardio to functional and cycle. Separate area for boxing and mixed martial arts',
-      icon: <GiJumpingRope size={40} color='yellow' />,
+      icon: (
+        <i
+          class='fa-solid fa-person-running fa-xl'
+          style={{ color: 'yellow' }}
+        ></i>
+      ),
     },
     {
       title: 'Round-the-clock operation',
       description:
         'The gym is open 24 hours a day, also works on all holidays and weekends',
-      icon: <IoMdClock size={40} color='yellow' />,
+      icon: (
+        <i class='fa-regular fa-clock fa-xl' style={{ color: 'yellow' }}></i>
+      ),
     },
   ];
   return (

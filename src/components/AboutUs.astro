@@ -1,0 +1,196 @@
+<script>
+  import { Carousel } from 'flowbite';
+  const items = [
+    {
+      position: 0,
+      el: document.getElementById('carousel-item-1'),
+    },
+    {
+      position: 1,
+      el: document.getElementById('carousel-item-2'),
+    },
+    {
+      position: 2,
+      el: document.getElementById('carousel-item-3'),
+    },
+    {
+      position: 3,
+      el: document.getElementById('carousel-item-4'),
+    },
+  ];
+
+  const options = {
+    defaultPosition: 1,
+    interval: 3000,
+
+    indicators: {
+      activeClasses: 'bg-[#FAFF00]',
+      inactiveClasses:
+        'bg-white/50 dark:bg-gray-800/50 hover:bg-white dark:hover:bg-gray-800',
+      items: [
+        {
+          position: 0,
+          el: document.getElementById('carousel-indicator-1'),
+        },
+        {
+          position: 1,
+          el: document.getElementById('carousel-indicator-2'),
+        },
+        {
+          position: 2,
+          el: document.getElementById('carousel-indicator-3'),
+        },
+        {
+          position: 3,
+          el: document.getElementById('carousel-indicator-4'),
+        },
+      ],
+    },
+
+    // callback functions
+    onNext: () => {
+      console.log('next slider item is shown');
+    },
+    onPrev: () => {
+      console.log('previous slider item is shown');
+    },
+    onChange: () => {
+      console.log('new slider item has been shown');
+    },
+  };
+
+  const $prevButton = document.getElementById('data-carousel-prev');
+  const $nextButton = document.getElementById('data-carousel-next');
+
+  console.log($prevButton);
+  $prevButton.addEventListener('click', () => {
+    carousel.prev();
+  });
+
+  $nextButton.addEventListener('click', () => {
+    carousel.next();
+  });
+
+  const carousel = new Carousel(items, options);
+  console.log('HOLA MUNDO');
+</script>
+
+<div class='px-10 xl:px-60' id='About'>
+  <h2 class='text-5xl font-normal text-center text-white md:text-left py-10'>
+    About us
+  </h2>
+  <section class='flex flex-col gap-10 md:grid md:grid-cols-2 md:grid-rows-1'>
+    <div
+      class='text-white gap-16 text-center md:text-left max-h-max overflow-y-hidden md:max-h-64 md:overflow-y-auto'
+    >
+      <p class='text-sm font-extralight mb-5'>
+        Gym24 is a leading fitness center located near Grushevka metro station,
+        offering over 1500 sq. m of space dedicated to top-of-the-line workout
+        equipment from leading brands such as Hammer Strength, Life Fitness, and
+        TechnoGym.
+      </p>
+      <p class='text-sm font-extralight mb-5'>
+        With affordable membership options, Gym24 is accessible to everyone who
+        wants to reach their fitness goals, whether it's building strength,
+        increasing endurance, or losing weight.
+      </p>
+      <p class='text-sm font-extralight'>
+        Certified trainers at Gym24 provide expert guidance and support to
+        develop personalized workout plans tailored to each individual's needs
+        and goals.
+      </p>
+    </div>
+
+    <div class='relative w-full max-w-lg max-h-96 xs:mx-auto'>
+      <!-- Carousel wrapper -->
+      <div
+        class='relative h-56 overflow-hidden rounded-lg sm:h-64 xl:h-80 2xl:h-96'
+      >
+        <!-- Item 1 -->
+        <div id='carousel-item-1' class='hidden duration-700 ease-in-out'>
+          <img
+            src='/photo1.avif'
+            class='absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2'
+            alt='...'
+          />
+        </div>
+        <!-- Item 2 -->
+        <div id='carousel-item-2' class='hidden duration-700 ease-in-out'>
+          <img
+            src='/photo2.avif'
+            class='absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2'
+            alt='...'
+          />
+        </div>
+        <!-- Item 3 -->
+        <div id='carousel-item-3' class='hidden duration-700 ease-in-out'>
+          <img
+            src='/photo3.avif'
+            class='absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2'
+            alt='...'
+          />
+        </div>
+        <!-- Item 4 -->
+        <div id='carousel-item-4' class='hidden duration-700 ease-in-out'>
+          <img
+            src='/photo4.avif'
+            class='absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2'
+            alt='...'
+          />
+        </div>
+      </div>
+      <!-- Slider indicators -->
+      <div class='flex justify-between items-center'>
+        <div class='z-30 flex gap-2.5 my-8'>
+          <button
+            id='carousel-indicator-1'
+            type='button'
+            class='w-10 h-[2px] rounded-full'
+            aria-current='true'
+            aria-label='Slide 1'></button>
+          <button
+            id='carousel-indicator-2'
+            type='button'
+            class='w-10 h-[2px] rounded-full'
+            aria-current='false'
+            aria-label='Slide 2'></button>
+          <button
+            id='carousel-indicator-3'
+            type='button'
+            class='w-10 h-[2px] rounded-full'
+            aria-current='false'
+            aria-label='Slide 3'></button>
+          <button
+            id='carousel-indicator-4'
+            type='button'
+            class='w-10 h-[2px] rounded-full'
+            aria-current='false'
+            aria-label='Slide 4'></button>
+        </div>
+        <!-- Slider controls -->
+        <div class='flex'>
+          <button
+            id='data-carousel-prev'
+            type='button'
+            class='z-30 flex items-center justify-center cursor-pointer'
+          >
+            <span class='inline-flex items-center justify-center w-10 h-10'>
+              <img src='/arrowLeft.svg' alt='Arrow left' />
+              <span class='hidden'>Previous</span>
+            </span>
+          </button>
+          <button
+            id='data-carousel-next'
+            type='button'
+            class='z-30 flex items-center justify-center cursor-pointer'
+          >
+            <span class='inline-flex items-center justify-center w-10 h-10'>
+              <img src='/arrowRight.svg' alt='Arrow right' />
+              <span class='hidden'>Next</span>
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

@@ -62,7 +62,7 @@ const NavBar = () => {
               {menuItems.map((item) => (
                 <li key={item}>
                   <a
-                    href='#'
+                    href={`#${item}`}
                     className='block py-2 pl-3 pr-4 text-white text-xs bg-gray-500 bg-opacity-10 rounded md:bg-transparent md:p-0 '
                     aria-current='page'
                   >
